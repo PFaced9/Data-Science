@@ -1,0 +1,352 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Q1 - Count all letters, digits, and special symbols from a given string \n",
+    "### str1 = \"I@#ma26rt^&ic5us\""
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "c88f4a1981742482"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Letter Count: 9\n",
+      "Digits Count: 3\n",
+      "Symbols Count: 4\n"
+     ]
+    }
+   ],
+   "source": [
+    "str1 = 'I@#ma26rt^&ic5us'\n",
+    "# str1 = 'abc1232$##@@'\n",
+    "counter_letters = 0\n",
+    "counter_digits = 0\n",
+    "counter_symbols = 0\n",
+    "\n",
+    "for char in str1:\n",
+    "    if 'a' <= char <= 'z' or 'A' <= char <= 'Z':\n",
+    "        counter_letters += 1\n",
+    "    elif '0' <= char <= '9':\n",
+    "        counter_digits += 1\n",
+    "    else:\n",
+    "        counter_symbols += 1\n",
+    "print(\"Letter Count:\", counter_letters)\n",
+    "print(\"Digits Count:\", counter_digits)        \n",
+    "print(\"Symbols Count:\", counter_symbols)        \n"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "ExecuteTime": {
+     "end_time": "2023-08-17T14:23:31.055711800Z",
+     "start_time": "2023-08-17T14:23:31.040482200Z"
+    }
+   },
+   "id": "e29e368aff2f1401"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Q2 - Write a Python program to find numbers divisible by nineteen or thirteen from a list of numbers using Lambda.\n",
+    "### a=[19, 65, 57, 39, 152, 639, 121, 44, 90, 190]"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "22456731f01a7787"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Numbers Divisible by 13 or 19 are: [19, 65, 57, 39, 152, 190]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = [19, 65, 57, 39, 152, 639, 121, 44, 90, 190]\n",
+    "divisible_number = list(filter(lambda x: (x % 13 == 0) or (x % 19 == 0), a))\n",
+    "print(\"Numbers Divisible by 13 or 19 are:\", divisible_number)"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "ExecuteTime": {
+     "end_time": "2023-08-17T14:32:55.556701300Z",
+     "start_time": "2023-08-17T14:32:55.525102300Z"
+    }
+   },
+   "id": "2f994bfb129bdafa"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Q3 - Find all of the words in a string that are less than 5 letters.\n",
+    "### string = \"Practice Problems to Drill List Comprehension in Your Head.\""
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "98865e542946b421"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 65,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Words less than 5: ['to', 'List', 'in', 'Your', 'Head']\n"
+     ]
+    }
+   ],
+   "source": [
+    "string = 'Practice Problems to Drill List Comprehension in Your Head'\n",
+    "\n",
+    "word_str = []\n",
+    "for word in string.split():\n",
+    "    if len(word) < 5:\n",
+    "        word_str.append(word)      \n",
+    "print(\"Words less than 5:\", word_str)"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "ExecuteTime": {
+     "end_time": "2023-08-17T15:06:15.079030Z",
+     "start_time": "2023-08-17T15:06:15.069860300Z"
+    }
+   },
+   "id": "f36b1d8c2a63367"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Q4 - Calculate income tax for the given income by adhering to the below rules:\n",
+    "### Taxable income Rate (in %)\n",
+    "### First 10,000 0\n",
+    "### Next 10,000 10\n",
+    "### The remaining 20\n",
+    "### For example, suppose the taxable income is 45000 the income tax payable is:\n",
+    "### 10000 0% + 10000 10% + 25000 20% = $6000."
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "4bb742fb4075a423"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 59,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tax to be paid for 45000 : $6000.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "taxable_amt = int(input(\"Enter The Amount: \"))\n",
+    "tax = 0\n",
+    "\n",
+    "if taxable_amt <= 10000:\n",
+    "    tax = 0\n",
+    "elif taxable_amt <= 20000:\n",
+    "    tax = (taxable_amt - 10000) * 0.1\n",
+    "else:\n",
+    "    tax = 10000 * 0.1 + (taxable_amt - 20000) * 0.2\n",
+    "print(\"Tax to be paid for\", taxable_amt,\":\" , \"$\"+str(tax))"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "ExecuteTime": {
+     "end_time": "2023-08-17T15:01:07.366592100Z",
+     "start_time": "2023-08-17T15:01:05.521474900Z"
+    }
+   },
+   "id": "7ad54d12bae9a5fc"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Q5 - Given below are the list of positive and negative words. Also, a list of tweets is provided. Separate out the positive and negative comments.\n",
+    "### positive = ['good','awesome', 'best', 'nice']\n",
+    "### negative = ['worst','awful', 'bad']\n",
+    "### tweets = ['This government policies are good', 'bad implementation', 'The way he played showed that he is one of the best players in the world', 'Her acting in the play was awesome', 'The wine tastes awful', 'It's nice to hear this little kid's laugh']\n"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "c15153736e085698"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "GOOD TWEETS ARE: ['This government policies are good', 'The way he played showed that he is one of the best players in the world', 'Her acting in the play was awesome', 'Its nice to hear this little kids laugh']\n",
+      "\n",
+      "BAD TWEETS ARE: ['bad implementation', 'The wine tastes awful']\n"
+     ]
+    }
+   ],
+   "source": [
+    "positive = ['good','awesome', 'best', 'nice']\n",
+    "negative = ['worst','awful', 'bad']\n",
+    "tweets = ['This government policies are good', 'bad implementation', 'The way he played showed that he is one of the best players in the world', 'Her acting in the play was awesome', 'The wine tastes awful', 'Its nice to hear this little kids laugh']\n",
+    "\n",
+    "good_tweets = []\n",
+    "bad_tweets = []\n",
+    "\n",
+    "for tweet in tweets:\n",
+    "    for good in positive:\n",
+    "        if good in tweet:\n",
+    "            good_tweets.append(tweet)\n",
+    "    for bad in negative:\n",
+    "        if bad in tweet:\n",
+    "            bad_tweets.append(tweet)\n",
+    "print(\"GOOD TWEETS ARE:\", good_tweets)  \n",
+    "print()\n",
+    "print(\"BAD TWEETS ARE:\", bad_tweets)\n"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "ExecuteTime": {
+     "end_time": "2023-08-17T15:03:54.891375700Z",
+     "start_time": "2023-08-17T15:03:54.859834900Z"
+    }
+   },
+   "id": "bab565659511d77f"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Q6 -Extend nested list by adding the sublist.\n",
+    "### You have given a nested list. Write a program to extend it by adding the sublist [\"h\", \"i\", \"j\"] in such a way that it will look like the following list.\n",
+    "### list1 = [\"a\", \"b\", [\"c\", [\"d\", \"e\", [\"f\", \"g\"], \"k\"], \"l\"], \"m\", \"n\"]\n",
+    "### sub list to add\n",
+    "### sub_list = [\"h\", \"i\", \"j\"]\n",
+    "### expected output =['a', 'b', ['c', ['d', 'e', ['f', 'g', 'h', 'i', 'j'], 'k'], 'l'], 'm', 'n']\n"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "6ba6bbbbbb282b35"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['a', 'b', ['c', ['d', 'e', ['f', 'g', 'h', 'i', 'j'], 'k'], 'l'], 'm', 'n']\n"
+     ]
+    }
+   ],
+   "source": [
+    "list1 = [\"a\", \"b\", [\"c\", [\"d\", \"e\", [\"f\", \"g\"], \"k\"], \"l\"], \"m\", \"n\"]\n",
+    "sub_list = [\"h\", \"i\", \"j\"]\n",
+    "\n",
+    "list1[2][1][2].extend(sub_list) \n",
+    "print(list1)"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "ExecuteTime": {
+     "end_time": "2023-08-17T15:11:17.551181300Z",
+     "start_time": "2023-08-17T15:11:17.519619500Z"
+    }
+   },
+   "id": "170573f1ac1c2366"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Q7. Remove and add item in a list.\n",
+    "### Write a program to remove the item present at index 4 and add it to the 2nd position and at the end of the list.\n",
+    "### list1 = [54, 44, 27, 79, 91, 41]\n"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "d91e19bdc8c8b437"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 95,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "New list after operations: [54, 44, 91, 27, 79, 41, 91]\n"
+     ]
+    }
+   ],
+   "source": [
+    "list1 = [54, 44, 27, 79, 91, 41]\n",
+    "elem = list1.pop(4)\n",
+    "list1.insert(2, elem)\n",
+    "list1.append(elem)\n",
+    "print(\"New list after operations:\", list1)"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "ExecuteTime": {
+     "end_time": "2023-08-17T15:21:23.458226100Z",
+     "start_time": "2023-08-17T15:21:23.442625700Z"
+    }
+   },
+   "id": "2efdbf6f77d484b0"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "outputs": [],
+   "source": [],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "c04a58c9208f30b0"
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
