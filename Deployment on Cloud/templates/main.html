@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      form {
+        margin: auto;
+        width: 35%;
+      }
+
+      .result {
+        margin: auto;
+        width: 35%;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div align="center">
+      <h2 style="font-size: 200%; color: purple">Anubhav Gupta - 2010990096</h2>
+      <h1 style="font-size: 200%; color: red">Insurance Charges Claim</h1>
+      <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+          <legend>Input values:</legend>
+          Age: <span style="color: red">*</span>
+          <input name="age" type="number" required /> <br /><br />
+          BMI: <span style="color: red">*</span>
+          <input name="bmi" type="number" required /> <br /><br />
+          Children: <span style="color: red">*</span>
+          <input name="children" type="number" required /> <br /><br />
+          <input type="submit" />
+        </fieldset>
+      </form>
+      <br />
+      <br />
+    </div>
+    <div class="result" align="center">
+      {% if result %} {% for variable, value in original_input.items() %}
+      <b>{{ variable }}</b>: {{ value }} {% endfor %} <br /><br />
+      <p style="font-size: 150%; color: red">Predicted Charges Claim:</p>
+      <p style="font-size: 50px">{{ result }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
