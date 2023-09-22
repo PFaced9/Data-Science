@@ -1,0 +1,6 @@
+Weekday To-Do List
+
+1. Amazon Web Services - Machine Learning.
+3. Time Series Forecasting.
+2. Pikle & Flask.
+4. 2+ Notebooks Kaggle.
