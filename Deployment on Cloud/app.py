@@ -1,4 +1,4 @@
-import flask 
+import flask
 import pickle
 import pandas as pd
 
