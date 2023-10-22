@@ -1,0 +1,32 @@
+{
+    "id": "8375B377",
+    "path": "~/Documents/bellabeat_case_study/Phase2(Analyse).R",
+    "project_path": "Phase2(Analyse).R",
+    "type": "r_source",
+    "hash": "761789963",
+    "contents": "",
+    "dirty": false,
+    "created": 1656842950104.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "25,31",
+        "scrollLine": "0",
+        "docOutlineVisible": "0",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualMode": "false",
+        "rmdVisualModeLocation": "54:0",
+        "rmdVisualWrapConfigured": "true",
+        "notebook_format": "html_document"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1656843198,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1656843198610,
+    "read_only": false,
+    "read_only_alternatives": []
+}
