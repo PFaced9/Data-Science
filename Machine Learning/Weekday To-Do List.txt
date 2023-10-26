@@ -1,0 +1,3 @@
+Richter prediction earthquake
+Songs recomendation on the basis of lyrics
+Lyrics generator
